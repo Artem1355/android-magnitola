@@ -97,9 +97,16 @@ footer { background:#020617; text-align:center; padding:40px 0; }
 .floating-btn { position:fixed; bottom:20px; right:20px; color:white; padding:15px 25px; border-radius:50px; text-decoration:none; font-weight:600; z-index: 999; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 .tg-bg { background: #0088cc; }
 
-@media (max-width: 900px) { 
-    .hero-wrapper, .contact-wrapper { flex-direction: column; text-align: center; } 
-    .nav-links { display: none; } 
-    .hero-left h1 { font-size: 26px; }
-    .gallery-grid { grid-template-columns: 1fr; }
+/* Настройки для мобильных экранов (ширина меньше 768px) */
+@media (max-width: 768px) {
+    .hero-left h1 {
+        font-size: 28px; /* Был 48px, теперь станет компактнее */
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 16px; /* Немного уменьшим и описание */
+        opacity: 0.9;
+    }
 }
