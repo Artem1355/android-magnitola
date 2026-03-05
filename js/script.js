@@ -9,7 +9,7 @@ async function sendToTelegram(formData) {
     const car = formData.get('car') || 'Заявка из формы';
 
     const message = `
-🚀 *НОВАЯ ЗАЯВКА - IDEALAUTO*
+🚀 *НОВАЯ ЗАЯВК - IDEALAUTO*
 👤 *Имя:* ${name}
 📞 *Телефон:* ${phone}
 🚗 *Авто:* ${car}
