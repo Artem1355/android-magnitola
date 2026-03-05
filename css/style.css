@@ -36,7 +36,7 @@ body {
     align-items: center;
 }
 
-.logo { font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+.logo { font-size: 26px; font-weight: 800; letter-spacing: 1px; }
 .logo span { color: #3b82f6; }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
