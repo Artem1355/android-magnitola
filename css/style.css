@@ -97,9 +97,44 @@ footer { background:#020617; text-align:center; padding:40px 0; }
 .floating-btn { position:fixed; bottom:20px; right:20px; color:white; padding:15px 25px; border-radius:50px; text-decoration:none; font-weight:600; z-index: 999; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 .tg-bg { background: #0088cc; }
 
+/* Исправленная мобильная версия */
 @media (max-width: 900px) { 
-    .hero-wrapper, .contact-wrapper { flex-direction: column; text-align: center; } 
-    .nav-links { display: none; } 
-    .hero-left h1 { font-size: 28px; }
-    .gallery-grid { grid-template-columns: 1fr; }
+    .hero-wrapper, .contact-wrapper { 
+        flex-direction: column; 
+        text-align: center; 
+    } 
+
+    .nav-links { 
+        display: none; 
+    } 
+
+    /* Уменьшаем шрифт, чтобы заголовок не занимал весь экран */
+    .hero-left h1 { 
+        font-size: 28px; 
+    }
+
+    /* Центрируем блок с кнопками */
+    .hero-buttons {
+        justify-content: center; /* Выравнивает кнопки по горизонтали в ряд */
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    /* Если кнопки слишком широкие и не влезают в ряд, 
+       делаем их друг под другом во всю ширину */
+    @media (max-width: 480px) {
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn {
+            width: 100%;
+            max-width: 300px; /* Чтобы кнопки не были слишком растянуты */
+        }
+    }
+
+    .gallery-grid { 
+        grid-template-columns: 1fr; 
+    }
 }
