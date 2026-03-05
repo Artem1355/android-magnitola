@@ -91,7 +91,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.card, .gallery img, h2').forEach(el => {
+document.querySelectorAll('.card, .feature-card, .gallery img, h2').forEach(el => {
     el.style.opacity = "0";
     el.style.transform = "translateY(30px)";
     el.style.transition = "all 0.8s ease-out";
