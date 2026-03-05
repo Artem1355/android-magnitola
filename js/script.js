@@ -6,7 +6,7 @@ const TELEGRAM_CHAT_ID = '6998969294';
 async function sendToTelegram(formData) {
     const name = formData.get('name');
     const phone = formData.get('phone');
-    const car = formData.get('car') || 'Заявка из нижней формы';
+    const car = formData.get('car') || 'Заявка из формы';
 
     const message = `
 🚀 *НОВАЯ ЗАЯВКА - IDEALAUTO*
@@ -64,15 +64,23 @@ document.querySelectorAll('form').forEach(form => {
 
 // Управление модальным окном
 const modal = document.getElementById('modal');
-const btnOpen = document.getElementById('openModal');
+const btnOpenHero = document.getElementById('openModal');
 const btnClose = document.getElementById('closeModal');
 
-if (btnOpen) {
-    btnOpen.addEventListener('click', () => {
+if (btnOpenHero) {
+    btnOpenHero.addEventListener('click', () => {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     });
 }
+
+// Открытие модалки из блока цен
+document.querySelectorAll('.open-modal-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
 
 if (btnClose) {
     btnClose.addEventListener('click', () => {
@@ -91,7 +99,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.card, .feature-card, .gallery img, h2').forEach(el => {
+document.querySelectorAll('.price-card, .feature-card, .gallery img, h2').forEach(el => {
     el.style.opacity = "0";
     el.style.transform = "translateY(30px)";
     el.style.transition = "all 0.8s ease-out";
